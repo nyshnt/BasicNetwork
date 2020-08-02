@@ -238,7 +238,7 @@ chaincodeInvoke() {
         -c '{"function": "initLedger","Args":[]}'
 
     ## Add private data
-    export CAR=$(echo -n "{\"key\":\"1111\", \"make\":\"Tesla\",\"model\":\"Tesla A1\",\"color\":\"White\",\"owner\":\"pavan\",\"price\":\"10000\"}" | base64 | tr -d \\n)
+    export CAR=$(echo -n "{\"key\":\"1111\", \"name\":\"Test\",\"email\":\"test@gmail.com\",\"country\":\"India\"}" | base64 | tr -d \\n)
     peer chaincode invoke -o localhost:7050 \
         --ordererTLSHostnameOverride orderer.example.com \
         --tls $CORE_PEER_TLS_ENABLED \
