@@ -8,25 +8,24 @@ import (
 	"github.com/hyperledger/fabric-chaincode-go/shim"
 	sc "github.com/hyperledger/fabric-protos-go/peer"
 	"github.com/hyperledger/fabric/common/flogging"
-
 )
 
 type SmartContract struct {
 }
 
-// User :  Define the User structure, with 4 properties.  Structure tags are used by encoding/json library
+// User :  Define the User structure, with 5 properties.  Structure tags are used by encoding/json library
 type User struct {
-	Id 		string `json:"id"`
+	Id      string `json:"id"`
 	Name    string `json:"name"`
 	Email   string `json:"email"`
-	DOB		string `json:"dob"`
+	DOB     string `json:"dob"`
 	Gender  string `json:"gender"`
 	Country string `json:"country"`
 }
 
-func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) sc.Response {
-	return shim.Success(nil)
-}
+// func (s *SmartContract) Init(APIstub shim.ChaincodeStubInterface) sc.Response {
+// 	return shim.Success(nil)
+// }
 
 var logger = flogging.MustGetLogger("fabUser_cc")
 
